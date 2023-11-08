@@ -26,6 +26,11 @@ RSpec.describe Capacitor, type: :model do
       expect(@capacitor).to be_valid
     end
 
+    it 'Capacitor invalido com campos obrigatorios não preenchidos?' do
+      capacitor = Capacitor.new
+      expect(capacitor).to be_valid
+    end
+
   end
 
 end
