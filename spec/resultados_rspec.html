@@ -279,10 +279,42 @@ a {
 
 
 <div class="results">
+<div id="div_group_1" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_1" class="passed">Capacitor</dt>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.00047 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "0 examples, 0 failures";</script>
+<div id="div_group_2" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_2" class="passed">Teste de preenchimento dos campos do model Capacitor</dt>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_2');</script>
+    <script type="text/javascript">makeRed('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">description consegue ser preenchido?</span>
+      <span class="duration">0.07386s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>  Failure/Error: expect(@capacitor.description).to eq(&quot;tantalo&quot;)
+
+    expected: &quot;tantalo&quot;
+         got: &quot;&quot;
+
+    (compared using ==)
+  # ./spec/models/capacitor_spec.rb:11:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+        <div class="backtrace"><pre>./spec/models/capacitor_spec.rb:11:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">9</span>    it 'description consegue ser preenchido?' do
+<span class="linenum">10</span>      @capacitor.description = ""
+<span class="offending"><span class="linenum">11</span>      expect(@capacitor.description).to eq("tantalo")</span>
+<span class="linenum">12</span>    end
+<span class="linenum">13</span>
+<span class="linenum">14</span><span class="comment"># Install the coderay gem to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.08197 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "1 example, 1 failure";</script>
 </div>
 </div>
 </body>

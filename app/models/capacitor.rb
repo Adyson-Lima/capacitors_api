@@ -1,0 +1,2 @@
+class Capacitor < ApplicationRecord
+end
