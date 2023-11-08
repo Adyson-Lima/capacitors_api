@@ -18,5 +18,15 @@ RSpec.describe Capacitor, type: :model do
 
   end
 
+  describe 'Teste de validcao do model Capacitor' do
+
+    it 'Capacitor valido com campos obrigatorios preenchidos?' do
+      @capacitor.description = ""
+      @capacitor.price = ""
+      expect(@capacitor).to be_valid
+    end
+
+  end
+
 end
 
