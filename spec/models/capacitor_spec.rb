@@ -11,6 +11,11 @@ RSpec.describe Capacitor, type: :model do
       expect(@capacitor.description).to eq("tantalo")
     end
 
+    it 'price consegue ser preenchido?' do
+      @capacitor.price = ""
+      expect(@capacitor.price).to eq("5,90")
+    end
+
   end
 
 end
