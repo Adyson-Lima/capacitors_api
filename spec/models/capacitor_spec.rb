@@ -7,7 +7,7 @@ RSpec.describe Capacitor, type: :model do
   describe 'Teste de preenchimento dos campos do model Capacitor' do
 
     it 'description consegue ser preenchido?' do
-      @capacitor.description = ""
+      @capacitor.description = "tantalo"
       expect(@capacitor.description).to eq("tantalo")
     end
 
