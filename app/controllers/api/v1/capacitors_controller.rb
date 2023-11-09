@@ -11,6 +11,15 @@ class Api::V1::CapacitorsController < ApplicationController
     render json: @capacitor
   end
 
+  def create
+    @capacitor = Capacitor.new(capacitor_params)
+    if @capacitor.save
+      render json: @capacitor, status: :created, location: api_v1_capacitor_url(@capacitor)
+    else
+      render json: @capacitor.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 
 def set_capacitor
