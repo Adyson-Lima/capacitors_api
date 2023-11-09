@@ -37,4 +37,13 @@ RSpec.describe Api::V1::CapacitorsController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/capacitors/id' do
+    it 'Consegue excluir um capacitor e retornar status 204?' do
+      capacitor = Capacitor.last
+      delete :destroy, params: {id: capacitor.id}
+      expect(Capacitor.all).not_to include(capacitor)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
