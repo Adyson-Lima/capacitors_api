@@ -28,4 +28,13 @@ RSpec.describe Api::V1::CapacitorsController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/capacitors/id' do
+    it 'Consegue atualizar um capacitor e retornar status 200?' do
+      capacitor = Capacitor.last
+      patch :update, params: {capacitor: {description: "eletrolitico", price: "1,00"}, id: capacitor.id}
+      expect(response.body).to include_json(description: "eletrolitico")
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
