@@ -1,6 +1,6 @@
 class Api::V1::CapacitorsController < ApplicationController
 
-  before_action :set_capacitor, only: %i[show] # show update destroy
+  before_action :set_capacitor, only: %i[show update] # show update destroy
 
   def index
     @capacitors = Capacitor.all
@@ -15,6 +15,14 @@ class Api::V1::CapacitorsController < ApplicationController
     @capacitor = Capacitor.new(capacitor_params)
     if @capacitor.save
       render json: @capacitor, status: :created, location: api_v1_capacitor_url(@capacitor)
+    else
+      render json: @capacitor.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @capacitor.update(capacitor_params)
+      render json: @capacitor
     else
       render json: @capacitor.errors, status: :unprocessable_entity
     end
