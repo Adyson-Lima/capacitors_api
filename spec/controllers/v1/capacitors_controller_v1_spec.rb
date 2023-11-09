@@ -20,4 +20,12 @@ RSpec.describe Api::V1::CapacitorsController, type: :controller do
     end
   end
 
+  describe 'POST /api/v1/capacitors' do
+    it 'Consegue criar um capacitor e retornar status 201?' do
+      post :create, params: {capacitor: {description: "ceramico", price: "0,25"}, format: :json}
+      expect(response.body).to include_json(description: "ceramico")
+      expect(response).to have_http_status(201)
+    end
+  end
+
 end
