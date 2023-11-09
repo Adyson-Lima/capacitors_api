@@ -1,6 +1,6 @@
 class Api::V1::CapacitorsController < ApplicationController
 
-  before_action :set_capacitor, only: %i[show update] # show update destroy
+  before_action :set_capacitor, only: %i[show update destroy] # show update destroy
 
   def index
     @capacitors = Capacitor.all
@@ -26,6 +26,10 @@ class Api::V1::CapacitorsController < ApplicationController
     else
       render json: @capacitor.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @capacitor.destroy!
   end
 
 private
