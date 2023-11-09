@@ -12,4 +12,12 @@ RSpec.describe Api::V1::CapacitorsController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/capacitors/id' do
+    it 'Consegue retornar um capacitor especifico e status 200?' do
+      get :show,params: {id: @capacitor.id}
+      expect(response.body).to include_json(id: @capacitor.id)
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
